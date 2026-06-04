@@ -37,6 +37,7 @@ string to_Morse(char c) {
 int main() {
     string message;
     string full_Morse = "";
+
     cout << "Enter a message: ";
     getline(cin, message);
 
@@ -44,12 +45,17 @@ int main() {
 
     for (int i = 0; i < message.length(); i++) {
         char c = toupper(message[i]);
+
         if (c < 'A' or c > 'Z') continue;
+
         string morse = to_Morse(c);
+
         cout << c << ": " << morse << endl;
+
         full_Morse += morse + "   ";
     }
 
     cout << "Full Morse Code: " << full_Morse << endl;
+
     return 0;
 }
